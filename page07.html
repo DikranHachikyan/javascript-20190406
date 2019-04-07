@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<script type="text/javascript">
+		//1. декларация
+		function showMessage(msgText, level,style){
+			document.write('<h'+level+' style="'+style+'">' + msgText + '</h'+level+'>');
+		}
+
+		//2. извикваме функцията
+		showMessage('Успешна регистрация',3, 'color:red');
+		showMessage('Добавихте продукт в количката',5,'font-size:17px');
+		showMessage('Избраният продукт не е наличен',4,'');
+	</script>
+</head>
+<body>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi qui aliquam officia deserunt accusantium voluptatibus tempora, veritatis, quibusdam corporis, omnis, ipsam consectetur nesciunt minus vel. Enim excepturi deserunt veritatis, id?</p>
+	<noscript>
+		Моля, разрешете използването на JS ...
+	</noscript>
+</body>
+</html>

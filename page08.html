@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<script type="text/javascript">
+		//1. декларация
+		function showMessage(msgText, level,style){
+			if ( level < 1 || level > 6){
+				//window.alert('Invalid value for level:' + level);
+				//console.log('Invalid value for level:' + level);
+				//console.warn('Invalid value for level:' + level);
+				//console.error('Invalid value for level:' + level);
+				console.info('Invalid value for level:' + level);
+				level = 3;
+			}
+
+			if ( typeof msgText !== 'string' || msgText.trim().length === 0){
+				console.log('Empty Message');
+				msgText = 'Default Message';
+			}
+			document.write('<h'+level+' style="'+style+'">' + msgText + '</h'+level+'>');
+		}
+
+		//2. извикваме функцията
+		var msg;
+
+		showMessage('Успешна регистрация',3);
+		showMessage('Добавихте продукт в количката',10,'font-size:17px');
+		showMessage(msg,4,'');
+	</script>
+</head>
+<body>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi qui aliquam officia deserunt accusantium voluptatibus tempora, veritatis, quibusdam corporis, omnis, ipsam consectetur nesciunt minus vel. Enim excepturi deserunt veritatis, id?</p>
+	<noscript>
+		Моля, разрешете използването на JS ...
+	</noscript>
+</body>
+</html>

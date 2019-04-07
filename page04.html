@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<script type="text/javascript">
+		//1. декларация
+		var visitorName = '';
+
+		//2. питаме посетителя как се казва
+		visitorName = window.prompt('Как се казвате?');
+
+		//3. проверяваме какво е въвел
+		if ( visitorName === null || visitorName === ''){ //Cancel или Ok без име
+			visitorName = 'посетител';
+		}
+
+
+		//4. извеждаме поздвав
+		document.write('<h1>Здравей ' + visitorName + '!</h1>');
+
+
+		
+	</script>
+</head>
+<body>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi qui aliquam officia deserunt accusantium voluptatibus tempora, veritatis, quibusdam corporis, omnis, ipsam consectetur nesciunt minus vel. Enim excepturi deserunt veritatis, id?</p>
+	<noscript>
+		Моля, разрешете използването на JS ...
+	</noscript>
+</body>
+</html>
