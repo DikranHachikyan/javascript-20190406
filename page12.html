@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+</head>
+<body>
+	<h1 id="title">Lorem ipsum dolor sit amet</h1>
+	<p class="text">Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit. Commodi qui aliquam officia deserunt accusantium voluptatibus tempora, veritatis, quibusdam corporis, omnis, ipsam consectetur nesciunt minus vel. Enim excepturi deserunt veritatis, id?</p>
+	<div>Lorem ipsum <a href="#" title="External Link">dolor sit</a> amet, consectetur adipisicing elit. Cumque officia, neque odit quisquam quo iusto accusantium temporibus aperiam autem mollitia numquam distinctio quasi reprehenderit eius, aliquid itaque dolor blanditiis totam?
+	</div>
+	<div class="text">Beatae perferendis quis itaque sed debitis expedita, eum, fugit ipsum, vitae culpa tempora a neque dolorum consequatur cumque earum magni. Eum expedita distinctio excepturi illum repudiandae perferendis quibusdam quasi aperiam.
+	</div>
+	<div>Itaque qui <a href="#" title="External Link">nemo ex soluta</a> quas, eius non necessitatibus recusandae commodi temporibus optio aperiam fuga asperiores cumque quae, nostrum repellat possimus numquam aliquam quis inventore doloremque nobis aspernatur. Nam, iste.
+	</div>
+	<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quae aut laboriosam autem accusamus enim magni dolor aliquam modi saepe. Mollitia ea, ex sapiente et saepe minima ipsam, incidunt aperiam.</p>
+	<noscript>
+		Моля, разрешете използването на JS ...
+	</noscript>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	-->
+	
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script>
+		//локален js
+		$(document).ready( function(){
+			$('p').css('background-color','#ccc');
+
+			$('.text').css('border','1px solid red');
+
+			$('#title').css('font-family','monospace');
+
+			$('a[title]').css('text-decoration','none')
+
+		});
+	</script>
+</body>
+</html>

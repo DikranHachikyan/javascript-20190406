@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<style>
+		ul {
+    		list-style: none;
+		}
+		li a {
+		    text-decoration: none;
+		}
+		li img {
+		    margin-right: 9px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Lorem ipsum dolor sit amet</h1>
+	<p class="text">&#8476 Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit. Commodi qui aliquam officia deserunt accusantium voluptatibus tempora, veritatis, quibusdam corporis, omnis, ipsam consectetur nesciunt minus vel. Enim excepturi deserunt veritatis, id?</p>
+	<h2></h2>
+	<ul>
+		<li><a href="http://no.com/manual.pdf">jQuery Manual</a></li>
+		<li><a href="http://no.com/tutorial.mp4">jQuery Tutorial</a></li>
+		<li><a href="http://no.com/cv.doc">My Resume</a></li>
+		<li><a href="http://no.com/audio.mp3"> Book</a></li>
+	</ul>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	-->
+	
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script>
+		//локален js
+		$(document).ready( function(){
+			$('li a[href$="mp4"]')
+				.before('<img src="./images/video-x-generic.png" alt="" />');
+			$('li a[href$="mp3"]')
+				.before('<img src="./images/audio-x-generic.png" alt="" />')
+				.prepend('<em>Audio</em>')
+				.css('border','1px solid red');
+			$('li a[href$="doc"]')
+				.before('<img src="./images/x-office-document.png" alt="" />');
+			$('li a[href$="pdf"]')
+				.before('<img src="./images/package-x-generic.png" alt="" />');
+			$('h1').html('Resource <em>Files</em>');
+			$('h2').text('Useful <em>Links</em>');	
+		});
+	</script>
+</body>
+</html>

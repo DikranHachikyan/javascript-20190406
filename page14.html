@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<input type="button"
+		   value="Click Me"
+		   id="btn">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi qui aliquam officia deserunt accusantium voluptatibus tempora, veritatis, quibusdam corporis, omnis, ipsam consectetur nesciunt minus vel. Enim excepturi deserunt veritatis, id?</p>
+	<label>
+		<input type="checkbox"
+			   id="agree"
+			   > Съгласен съм ...
+	</label>
+	<button id="off">Stop Event Listener</button>
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			var count = 0;
+
+			$('#btn').on('click', function(){
+				count++;
+				console.log('Click Event:', count);
+			});//on btn click
+
+			$('#agree')
+				.on('click',function(){
+					console.log('Click Event (chkbox)');
+				})
+				.one('click',function(){
+					console.log('Click Event (once)');
+				})
+				.on('change',function(){
+					console.log('Change Event (chkbox)');
+				});
+		   $('#off').on('click',function(){
+		   		$('#btn').off('click');
+		   });
+		});//document ready
+	</script>
+</body>
+</html>
