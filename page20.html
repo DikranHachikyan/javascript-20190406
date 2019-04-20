@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<div>
+		<a href="#">
+			<img src="./pics-large/pic1-320x240.jpg" alt="" id="bnr">
+		</a>
+	</div>
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			//HW: Преработете примера, така че currentIndex да се променя на
+            //    на случаен принцип с Math.random() и прилятели
+			var images = [
+				'pic1-320x240.jpg',
+				'pic2-320x240.jpg',
+				'pic3-320x240.jpg',
+				'pic4-320x240.jpg',
+				'pic5-320x240.jpg'
+			],
+				path = './pics-large/',
+				currentIndex = 0;
+
+			setInterval(function(){
+				//1. увеличаваме индекса с 1
+				currentIndex++;
+
+				//2. проверка до къде сме стигнали
+				if ( currentIndex >= images.length ){
+					currentIndex = 0; //започваме отначало
+				}
+
+				//3. сменяме картинката
+				$('#bnr').attr('src', path + images[currentIndex]);
+				console.log('index:' + currentIndex);
+			},2000);
+		});//document ready
+	</script>
+</body>
+</html>
