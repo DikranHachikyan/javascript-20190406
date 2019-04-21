@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<style>
+		#a {
+		    border: 2px solid red;
+		    height: 300px;
+		}
+		#b {
+		    border: 2px solid blue;
+		    height: 200px;
+		}
+		#c {
+		    border: 2px solid green;
+		    height: 100px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="a">
+		A
+		<div id="b">
+			B
+			<div id="c">
+				C
+				<a href="http://dir.bg">dir bg</a>
+			</div>
+			<button id="b1">Button 1</button>
+			<button id="b2">Button 2</button>
+			<button id="b3">Button 3</button>
+		</div>
+	</div>
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script src="./js/images.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#a').click(function(event){
+				console.log('Click #A:', event);
+				event.target.style = 'background-color:rgb(0,0,'+ (Math.random() * 255)+ ')';
+			});
+
+			$('#b1').click(function(event){
+				console.log('Click #b1:', event);
+				//спира движението от b1->Window
+				event.stopPropagation();
+			});
+
+			$('#c a').click(function(event){
+				console.log('Click event!');
+				event.preventDefault();
+				event.stopPropagation();
+			});
+
+			$('button').click(function(event){
+				console.log('button:' + event.target.id);
+				event.stopPropagation();
+			});
+
+		});//document ready
+
+	</script>
+</body>
+</html>

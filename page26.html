@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<style>
+		.remove-todo {
+		    color: red;
+		    margin-left: 10px;
+		    font-size: 1.5em;
+		    background: transparent;
+		    border: none;
+		    cursor: pointer;
+		    /*float:right;*/
+		}
+		#todo-list{
+			width: 400px;
+		}
+		.done{
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<h1>Todo List</h1>
+	<div>
+		<input type="text" id="title">
+		<button id="add-todo">Add</button>
+	</div>
+
+	<ol id="todo-list"></ol>
+	
+	<template id="list-item">
+		 <li>
+		     <span></span>
+		     <label>
+		       <input type="checkbox" class="mark">Done
+		    </label>
+		    <button class="remove-todo">&times;</button>
+		 </li>	
+	</template>
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script src="./js/images.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#add-todo').click(function(event){
+				var title = $('#title').val(),
+					tmpl = $('#list-item').html()
+					li$  = $(tmpl);
+				//TODO: да се провери дали не е празен текста
+				li$.find('span').html(title);
+				$('#todo-list').append(li$);
+				$('#title').val('');
+			});//add todo
+
+			$('#todo-list').on('click', '.mark',function(event){
+				$(this) //checkbox
+					.parent() //<label>
+					.prev()   //<span>
+					.toggleClass('done'); 
+				console.log('mark as done');
+			}); //on click checkbox done
+
+			$('#todo-list').on('click', '.remove-todo', function(event){
+				//this - button!!!
+				$(this) //button
+					.parent() //li
+					.fadeOut(500, function(){
+						//!!! тук this е li !!!
+						$(this).remove();
+					});
+			});
+		});//document ready
+
+	</script>
+</body>
+</html>

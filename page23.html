@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page</title>
+	<style>
+		a{
+			text-decoration: none;
+		}
+		img{
+			display: block;
+			margin-bottom:5px;
+		}
+	</style>
+</head>
+<body>
+	<dl>
+		<dt><a href="#">Lorem ipsum dolor sit amet?</a></dt>
+		<dd>
+			<img src="./pics-small/pic1.jpg" alt="">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, vitae accusantium unde. Nulla ab saepe unde tempore. Voluptate vitae magnam laborum sit! Nisi aspernatur repellat iste aliquid nemo in perspiciatis.
+		</dd>
+		<dt><a href="#">Consectetur adipisicing elit?</a></dt>
+		<dd>
+			<img src="./pics-small/pic2.jpg" alt="">
+			Consectetur adipisicing elit. Blanditiis quos iste tempore vel nulla nobis quod nisi eum ducimus facilis possimus dolores dolorum magni laborum molestias, minus fuga neque. Repellat!
+		</dd>
+		<dt><a href="#">Ipsum omnis cupiditate?</a></dt>
+		<dd>
+			<img src="./pics-small/pic3.jpg" alt="">
+			Ipsum omnis cupiditate harum excepturi, velit ut praesentium expedita vel fugit! Quasi minima maxime delectus nam architecto, dignissimos nobis provident obcaecati sequi?
+		</dd>
+		<dt><a href="#">Sunt, quidem soluta, incidunt?</a></dt>
+		<dd>
+			<img src="./pics-small/pic4.jpg" alt="">
+			 Sunt, quidem soluta, incidunt dolor mollitia reprehenderit corporis laudantium amet adipisci ex consectetur praesentium quaerat libero eum odit voluptatem magni atque ipsa.
+		</dd>
+		<dt>
+			<a href="#">Tempora sint autem beatae quasi?</a>
+		</dt>
+		<dd>
+			<img src="./pics-small/pic5.jpg" alt="">
+			 Tempora sint autem beatae quasi est laboriosam libero omnis possimus! Tenetur nam, adipisci? Amet ad, temporibus numquam necessitatibus officia aut nemo debitis.
+		</dd>
+	</dl>
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script src="./js/images.js"></script>
+	<script>
+		$(document).ready(function(){
+			var prevVisible = null;
+
+			$('dd').hide();
+
+			$('dt a').click(function(){
+				if (prevVisible != null){
+					prevVisible.hide();
+				}
+
+				prevVisible = $(this)
+								.parent()
+								.next();	
+
+				prevVisible
+					.fadeToggle(500);
+					//.slideToggle(500);
+				//console.log('show answer');
+			});//on click link
+		});//document ready
+
+	</script>
+</body>
+</html>
